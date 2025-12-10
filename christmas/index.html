@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Merry Christmas</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(to bottom, #0a0a2e, #2e003e);
+            color: white;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            margin-top: 40px;
+            font-size: 50px;
+            text-shadow: 0 0 20px #ff66c4;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #ff66c4; }
+            to { text-shadow: 0 0 25px #ff2e63; }
+        }
+
+        /* Anime boy image */
+        .anime-boy {
+            width: 240px;
+            margin-top: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Reveal section */
+        .reveal-container {
+            margin-top: 25px;
+        }
+
+        #revealBtn {
+            background: #ff2e63;
+            color: white;
+            padding: 14px 26px;
+            border-radius: 12px;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #revealBtn:hover {
+            transform: scale(1.1);
+        }
+
+        .hidden-message {
+            opacity: 0;
+            transition: opacity 1.2s ease;
+            margin-top: 18px;
+            font-size: 26px;
+            text-shadow: 0 0 10px #ff6ec7;
+        }
+
+        .hidden-message.show {
+            opacity: 1;
+        }
+
+        /* Gift box animation */
+        .gift-box {
+            font-size: 60px;
+            margin-top: 20px;
+            transition: transform 0.2s;
+        }
+
+        .vibrate {
+            animation: vibrate 0.15s infinite alternate;
+        }
+
+        @keyframes vibrate {
+            0% { transform: translateX(-4px); }
+            100% { transform: translateX(4px); }
+        }
+
+        /* Snowfall */
+        .snow {
+            pointer-events: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: url('https://i.imgur.com/5v2rjCk.png');
+            animation: snow 12s linear infinite;
+        }
+
+        @keyframes snow {
+            from { background-position: 0 0; }
+            to { background-position: 0 1200px; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🎄 Merry Christmas 🎄</h1>
+
+    <!-- Anime Boy Image -->
+    <img src="C:\Users\acer\Pictures\— 𝓚age𝓗ina 𐙚࣪  - Wallpaper_.jpeg" alt="Anime Boy" class="anime-boy">
+
+    <!-- Reveal Section -->
+    <div class="reveal-container">
+        <button id="revealBtn">🎁 Click to Reveal Your Christmas Message 🎁</button>
+
+        <div id="hiddenMessage" class="hidden-message">
+            ✨ Wishing you a magical Christmas filled with love, joy, and warmth! ✨
+        </div>
+    </div>
+
+    <!-- Gift Box -->
+    <div class="gift-box" id="giftBox">🎁</div>
+    
+
+    <!-- Background Music -->
+    <audio id="bgMusic" src="c:\Users\acer\Documents\Axix_-_Muskan_(mp3.pm).mp3" autoplay loop></audio>
+
+    <!-- Snowfall -->
+    <div class="snow"></div>
+
+    <script>
+        const btn = document.getElementById('revealBtn');
+        const message = document.getElementById('hiddenMessage');
+        const gift = document.getElementById('giftBox');
+
+        btn.addEventListener('click', () => {
+            message.classList.toggle("show");
+
+            gift.classList.add("vibrate");
+            setTimeout(() => gift.classList.remove("vibrate"), 1500);
+        });
+    </script>
+
+</body>
+</html>
